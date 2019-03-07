@@ -14,7 +14,7 @@ let appData = {
   budget: money,
   expenses: {},
   optionalExpenses: {},
-  income: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+  income: [],
   timeData: time,
   savings: true,
   chooseExpenses: function () {
@@ -76,11 +76,10 @@ let appData = {
     while (items == "" || items == null) {
       items = prompt('Что принесет дополнительный доход ? (перечислите через запятую)', '');
     }
-    let qwe = appData.income;
-    delete qwe[0];
-    qwe.forEach(function (qwe, i) {
-      console.log("Способы доп. заработка: " + i + ': ' + qwe);
-      alert("Способы доп. заработка: " + i + ': ' + qwe);
+
+      appData.income.forEach(function (item , i) {
+      console.log("Способы доп. заработка: " + (i+ 1) + ': ' + item);
+      alert("Способы доп. заработка: " + i + ': ' + appData.income );
     });
     for (let key in appData) {
       console.log("Наша программа включает в себя данные: " + appData);
